@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="29805cbd-c376-4418-8508-56504662a812" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/My_response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/NavBar/header_user.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/archives.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/clicks_archive.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/comment_view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/addComment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/comments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/delClick.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/delResponse.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/images/shutterstock_429620146.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/images/Без названия (2).jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/realising/response.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/response_view.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NavBar/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/NavBar/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NavBar/header_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/NavBar/header_admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShowMore.php" beforeDir="false" afterPath="$PROJECT_DIR$/ShowMore.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/clicks.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/clicks.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detailTour.php" beforeDir="false" afterPath="$PROJECT_DIR$/detailTour.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/practice.php" beforeDir="false" afterPath="$PROJECT_DIR$/practice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="C:\php7\php.exe" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2fXvrzIO95mkK4DEB4N4Az5pVIK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/User/Desktop/tourism/web_srs",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29805cbd-c376-4418-8508-56504662a812" name="Changes" comment="" />
+      <created>1713960439735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713960439735</updated>
+      <workItem from="1713960440835" duration="418000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
