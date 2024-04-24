@@ -36,7 +36,7 @@ $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
             <form action="realising/delClick.php" method="post" name="delClick">
                 <input type="hidden" name="form_id" value="del">
                 <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                <button class="btn btn-primary" type="submit" name="del">delete</button>
+                <button class="btn btn-danger" type="submit" name="del">delete</button>
             </form>
         </div>
     </div>

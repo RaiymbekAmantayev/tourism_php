@@ -53,7 +53,7 @@ require "NavBar/header.php";
         </a>
         <form style="text-align: center;" action="admin/realising/delete.php" method="post">
             <input type="hidden" name="id_to_delete" value="<?php echo $res_serv->id; ?>">
-            <button type="submit" name="delete" class="btn btn-primary ">delete</button>
+            <button type="submit" name="delete" class="btn btn-danger ">delete</button>
         </form>
     </div>
         <?php
@@ -86,10 +86,15 @@ require "NavBar/header.php";
 <?php foreach($res_comments as $com):?>
     <div class="request">
         <div class="card h-100">
+            <?php if ($com->changed == 1): ?>
+                <div  class="card-footer text-right">
+                    <span style="margin-right: 50%" class="changed-label">changed by admin</span>
+                </div>
+            <?php endif; ?>
             <div class="card-body">
-                <h5 class="card-title"><?php echo $com->login?></h5>
+                <h5 class="card-title"><?php echo $com->login ?></h5>
                 <br>
-                <h3 class="card-text"><?php echo $com->text?></h3>
+                <h3 class="card-text"><?php echo $com->text ?></h3>
             </div>
             <?php
             if ($_SESSION['login'] === "admin" || $_SESSION['login'] === $com->login) {
@@ -98,7 +103,7 @@ require "NavBar/header.php";
             <form action="admin/realising/comments.php" method="post" name="delClick">
                 <input type="hidden" name="form_id" value="delete">
                 <input type="hidden" name="id" value="<?php echo $com->id; ?>">
-                <button class="btn btn-primary" type="submit" name="del">delete</button>
+                <button class="btn btn-danger" type="submit" name="del">delete</button>
             </form>
             <?php
             }
@@ -107,7 +112,12 @@ require "NavBar/header.php";
                 <form action="admin/realising/comments.php" method="post" >
                     <input type="hidden" name="form_id" value="leave">
                     <input type="hidden" name="id" value="<?php echo $com->id; ?>">
-                    <button class="btn btn-primary" type="submit" name="leave">leave</button>
+                    <button class="btn btn-warning" type="submit" name="leave">archive</button>
+                </form>
+                <form action="admin/updateComment.php?id=<?php echo $com->id; ?>" method="post" >
+                    <input type="hidden" name="form_id" value="leave">
+                    <input type="hidden" name="id" value="<?php echo $com->id; ?>">
+                    <button class="btn btn-primary" type="submit" name="leave">update</button>
                 </form>
                     </div>
                 <?php
@@ -144,5 +154,8 @@ require "NavBar/header.php";
     .request p {
         margin: 5px 0;
         font-size: 16px;
+    }
+    .changed-label{
+        margin-right: 50px;
     }
 </style>

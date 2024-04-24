@@ -7,11 +7,30 @@ $dbn = "mysql:host=".$host.';dbname='.$db.';charset=utf8';
 $pdo = new PDO($dbn, $user, $password);
 $pdo->exec("USE $db");
 
-$service = $pdo->prepare("SELECT c.*, t.title, t.price, t.datastart, t.dataend, u.name, u.login FROM comments c INNER JOIN tour t ON c.tourID = t.id INNER JOIN users u ON c.userID = u.id WHERE c.archive IS NULL order by id desc;");
+// Получаем значение из формы поиска
+$search_login = isset($_GET['login']) ? $_GET['login'] : '';
+
+// Формируем запрос с учетом фильтрации по логину пользователя
+$sql = "SELECT c.*, t.title, t.price, t.datastart, t.dataend, u.name, u.login FROM comments c INNER JOIN tour t ON c.tourID = t.id INNER JOIN users u ON c.userID = u.id WHERE c.archive IS NULL";
+
+// Добавляем условие для фильтрации, если указан логин
+if (!empty($search_login)) {
+    $sql .= " AND u.login = :login";
+}
+
+$sql .= " ORDER BY id DESC";
+
+$service = $pdo->prepare($sql);
+
+// Подставляем значение в запрос, если логин указан
+if (!empty($search_login)) {
+    $service->bindParam(':login', $search_login, PDO::PARAM_STR);
+}
+
 $service->execute();
 $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
-?>
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +43,13 @@ $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
 <?php require "../NavBar/header_admin.php" ?>
 <body>
 <h1 style="text-align: center">Комментарии пользователей на туры</h1>
+<form method="GET" action="">
+    <div class="form-group">
+        <label for="login">Поиск по логину пользователя:</label>
+        <input type="text" class="form-control" id="login" name="login" placeholder="Введите логин">
+    </div>
+    <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
 <?php foreach($res_serv as $serv):?>
     <div class="request">
         <div class="card h-100">
@@ -38,17 +64,22 @@ $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
             <form action="realising/comments.php" method="post" >
                 <input type="hidden" name="form_id" value="delete">
                 <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                <button class="btn btn-primary" type="submit" name="del">delete</button>
+                <button class="btn btn-danger" type="submit" name="del">delete</button>
             </form>
             <form action="realising/comments.php" method="post">
                 <input type="hidden" name="form_id" value="show">
                 <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                <button class="btn btn-primary" type="submit" name="show">show</button>
+                <button class="btn btn-success" type="submit" name="show">show</button>
             </form>
             <form action="realising/comments.php" method="post" >
                 <input type="hidden" name="form_id" value="leave">
                 <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                <button class="btn btn-primary" type="submit" name="leave">leave</button>
+                <button class="btn btn-warning" type="submit" name="leave">archive</button>
+            </form>
+            <form action="updateComment.php?id=<?php echo $serv->id; ?>" method="post" >
+                <input type="hidden" name="form_id" value="leave">
+                <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
+                <button class="btn btn-primary" type="submit" name="leave">update</button>
             </form>
             </div>
         </div>

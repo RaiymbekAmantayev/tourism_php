@@ -43,7 +43,7 @@ $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
             </div>
             <form action="realising/delResponse.php" method="post" name="delRes">
                 <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                <button class="btn btn-primary" type="submit" name="del">delete</button>
+                <button class="btn btn-danger" type="submit" name="del">delete</button>
             </form>
         </div>
     </div>

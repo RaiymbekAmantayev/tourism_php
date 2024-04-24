@@ -38,12 +38,17 @@ $res_serv = $service->fetchAll(PDO::FETCH_OBJ);
                 <form action="realising/comments.php" method="post" >
                     <input type="hidden" name="form_id" value="delete">
                     <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                    <button class="btn btn-primary" type="submit" name="del">delete</button>
+                    <button class="btn btn-danger" type="submit" name="del">delete</button>
                 </form>
                 <form action="realising/comments.php" method="post">
                     <input type="hidden" name="form_id" value="show">
                     <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
-                    <button class="btn btn-primary" type="submit" name="show">show</button>
+                    <button class="btn btn-success" type="submit" name="show">show</button>
+                </form>
+                <form action="updateComment.php?id=<?php echo $serv->id; ?>" method="post" >
+                    <input type="hidden" name="form_id" value="leave">
+                    <input type="hidden" name="id" value="<?php echo $serv->id; ?>">
+                    <button class="btn btn-primary" type="submit" name="leave">update</button>
                 </form>
             </div>
         </div>
